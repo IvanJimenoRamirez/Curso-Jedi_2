@@ -1,5 +1,5 @@
 var act_id = 1;
-var link = "https://curso-jedi-web.herokuapp.com/pokemons/1";
+var link = "https://curso-html-jedi.herokuapp.com/pokemons/1";
 
 $(window).on("load", function(){
     refreshPokemon();
@@ -7,7 +7,7 @@ $(window).on("load", function(){
     $("#next").on("click", Next);
     $("#user_click").on("click", async function() {
         let valor = $("#user_input").val();
-        let pokemon_db = await axios.get("https://curso-jedi-web.herokuapp.com/pokemons");
+        let pokemon_db = await axios.get("https://curso-html-jedi.herokuapp.com/pokemons");
         let change = false;
         if (valor.trim() !== "") {
             if (isNaN(valor)) {
@@ -17,7 +17,7 @@ $(window).on("load", function(){
                 })
                 if (change) {
                     $("#last_child").remove();
-                    link = `https://curso-jedi-web.herokuapp.com/pokemons/?name=${valor}`;
+                    link = `https://curso-html-jedi.herokuapp.com/pokemons/?name=${valor}`;
                     refreshPokemon();
                 }
                 else {
@@ -47,7 +47,7 @@ $(window).on("load", function(){
                 })
                 if (change) {
                     $("#last_child").remove();
-                    link = `https://curso-jedi-web.herokuapp.com/pokemons/?num=${valor}`;
+                    link = `https://curso-html-jedi.herokuapp.com/pokemons/?num=${valor}`;
                     refreshPokemon();
                 }
                 else {
@@ -108,12 +108,12 @@ let refreshPokemon = async () => {
 let Prev = () => {
     if (act_id != 1) --act_id;
     else act_id = 6;
-    link = `https://curso-jedi-web.herokuapp.com/pokemons/${act_id}`;
+    link = `https://curso-html-jedi.herokuapp.com/pokemons/${act_id}`;
     refreshPokemon();
 }
 let Next = () => {
     if (act_id != 6) ++act_id;
     else act_id = 1;
-    link = `https://curso-jedi-web.herokuapp.com/pokemons/${act_id}`;
+    link = `https://curso-html-jedi.herokuapp.com/pokemons/${act_id}`;
     refreshPokemon();
 }
