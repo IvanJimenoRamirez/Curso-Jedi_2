@@ -1,0 +1,65 @@
+
+<!-- Web con una tabla. 3 botones y una búsqueda (input con tag búsqueda) . De base hacer llamada a la api para devolver el primer pokemon.
+En el JSON se puede añadir un filtro. /valorId en vez de devolver el array con todos los elementos solo devuelve el del id 1. 
+Al crear un fichero JSON se ha de añadir un id único. También se pueden añadir filtros añadiendo ?name=charizard hace filtraje por valores.
+DEvuelve el array con todos los elementos que cumplen la condición. De base cargar primer pojemon (bulbausr) a la tabla añadir el número,
+sprites normales i shiny, nombre pokemon y tipos. Los tipos están en un array de objetos. Cada objeto tendrá la propiedad type con otro 
+objeto con la propiedad name (lo que interesa). Se han de encadenar y poner & en caso de que tenga + de 1. Si tiene movimiento oculto (HM)
+en propiedad moves, hm o es array de strings o puede ser null. Si no tiene HM se ha de poner "none". La funcionaliudad es la siguiente, Con 
+botón izquierdo se recorre la array hacia la izwquierda. Es decir si estas en el 1 vas al último. Ordenados por ID. En el inoput se puede buscar
+por número o nombre. Para hacerlo se ha de implementar un control para saber si lo que sse introduce es número o palabra, Se puede usar la función 
+isNaN (retorna true si lo que se le pasa no es un número) Eventos del botón con axios, solo método GET, como primer valor la URL. Al clicar al botón 
+hacer llamada a la api. Si se hace la url y se añade el valor del id retornará el pokemon con id en sí, se puede filtrar con ?num=549. o ?name -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta character="UTF-8">
+        <meta name="viewport" contnt="width=device_width, initial-scale=1.0">
+        <title> Pokedex </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="css/main.css" rel="stylesheet" type="text/css">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>   
+        <script src="js/jquery.js"></script>
+    </head>
+    <body>
+        <header>
+            <b>Pokedex:</b>
+        </header>
+        <main id="error_div" class="web_content">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Sprite</th>
+                    <th scope="col">Sprite Shiny</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Types</th>
+                    <th scope="col">HM</th>
+                  </tr>
+                </thead>
+                <tbody id="pokemon_values">
+                   
+                </tbody>
+              </table>
+              <div class="flex_container">
+                <button id="prev">
+                    Left
+                </button>
+                <div>
+                    <input id="user_input" type="search" placeholder="Search by name or by pokedex number!">
+                    <button id="user_click">Search</button>
+                </div>
+                <button id="next">
+                    Right
+                </button>
+              </div>
+
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>

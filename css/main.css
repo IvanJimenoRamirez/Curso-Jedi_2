@@ -1,0 +1,42 @@
+body{
+    background-color: azure;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+}
+
+header{
+    padding-bottom: 4vh;
+    font-size: 3vh;
+}
+
+.web_content{
+    border: solid black 2px;
+    padding: 4vh;
+    background-color: white;
+    min-height: 25vh;
+}
+
+.flex_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div input{
+    margin-left: 5vh;
+    width: 40vh;
+    text-align: center;
+}
+
+.align_text_center{
+    text-align: center;
+    margin-top: 4vh;
+    margin-bottom: 0px;
+}
+
+#user_click{
+    margin-right: 4vh;
+}
